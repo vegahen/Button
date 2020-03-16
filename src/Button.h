@@ -2,16 +2,18 @@
 #define Button_h
 
 class Button{
-  bool pressed;
-  long time_out;
-  
   byte pin;
-  unsigned int time_delay;
-  bool releaseMode;
+  bool pressed_when;                  // Button is pressed when HIGH or LOW
+  unsigned int time_delay;            // Release Mode when = 0
+  
+  bool in;
+  long ignore_until;
   
 public:
-  Button(byte pin, unsigned int time_delay, bool releaseMode);
-  const bool toggled();
+  Button(byte pin, bool pressed_when, unsigned int time_delay);
+  const bool pressed();
+  //const bool released();
+  const bool is_in();
 };
 
 #endif

@@ -2,32 +2,47 @@
 
 #include "Button.h"
 
-Button::Button(byte pin, unsigned int time_delay, bool releaseMode) :
+Button::Button(byte pin, bool pressed_when, unsigned int time_delay) :
   pin(pin),
+  pressed_when(pressed_when),
   time_delay(time_delay),
-  releaseMode(releaseMode),
-  pressed(false),
-  time_out(0){
-    pinMode(pin, INPUT);
-}
+  in(false),
+  ignore_until(0) {}
 
-const bool Button::toggled(){
-  if (releaseMode == false){
-    if (millis() < time_out){
+const bool Button::pressed(){
+  if (time_delay){
+    if (millis() < ignore_until){
+      if (digitalRead(pin) == pressed_when){
+        in = true;
+      }
+      else{
+        in = false;
+      }
       return false;
     }
-    if (digitalRead(pin) == true){
-      time_out = millis() + time_delay;
+    if (digitalRead(pin) == pressed_when){
+      in = true;
+      ignore_until = millis() + time_delay;
       return true;
     }
-  }
-  if (pressed == digitalRead(pin)){
+    in = false;
     return false;
   }
-  if (digitalRead(pin) == true){
-    pressed = true;
+  
+  if (digitalRead(pin) == pressed_when){
+    if (in == true){
+      return false;
+    }
+    in = true;
     return true;
   }
-  pressed = false;
+  if (in == true){
+    in = false;
+  }
   return false;
+}
+
+
+const bool Button::is_in(){
+  return in;
 }
