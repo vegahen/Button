@@ -2,7 +2,7 @@
 <div>
   <h2>Declare button</h2>
   <p>
-    Button B(2, HIGH, 500);
+    <b>Button B(2, HIGH, 500);</b>
   </p>
   <h2>Parameters</h2>
   <p>
