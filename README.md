@@ -7,14 +7,14 @@
 
 <h5>Parameters</h5>
 <div>
-  byte pin			\t\t\tPin number\n
-  bool pushed_when		\t\tVoltage when button is pushed in\n
-  unsigned long time_delay = 0	\tTime delay, Release Mode when time_delay = 0\n
+  byte pin <br> Pin number <br>
+  bool pushed_when <br> Voltage when button is pushed in <br>
+  unsigned long time_delay = 0 <br> Time delay, Release Mode when time_delay = 0 <br>
 </div>
 
 <h5>pinModes are set manually </h5>
 <div>
-  void setup(){\n
-    pinMode(2, INPUT);\n
+  void setup(){<br>
+  <ensp> pinMode(2, INPUT);<br>
   }
 </div>
