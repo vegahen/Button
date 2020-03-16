@@ -12,8 +12,14 @@
   </p>
   <h2>pinModes are set manually </h2>
   <p>
-    <b>void setup(){<br>
+    <b>void setup( ) {<br>
     &emsp;pinMode(2, INPUT);<br>
     }</b>
+  </p>
+  <h2>Button is refreshed in loop</h2>
+  <p>
+    <b>void loop( ) {<br>
+    &emsp;B.refresh( );<br>
+    }
   </p>
 </div>
