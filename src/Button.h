@@ -3,17 +3,24 @@
 
 class Button{
   byte pin;
-  bool pressed_when;                  // Button is pressed when HIGH or LOW
-  unsigned int time_delay;            // Release Mode when = 0
+  bool pressed_when;
+  unsigned long time_delay;
   
-  bool in;
   long ignore_until;
   
+  bool was_in;
+  bool is_in;
+  bool been_pressed;
+  bool pressed_now;
+  bool been_released;
+  bool released_now;
+  
 public:
-  Button(byte pin, bool pressed_when, unsigned int time_delay);
+  Button(byte pin, bool pressed_when, unsigned long time_delay = 0);
+  void refresh();
   const bool pressed();
-  //const bool released();
-  const bool is_in();
+  const bool released();
+  const bool in();
 };
 
 #endif
