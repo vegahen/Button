@@ -8,12 +8,12 @@
   <p>
     <b>byte pin</b> - Pin number <br>
     <b>bool pushed_when</b> - Voltage when button is pushed in <br>
-    <b>unsigned long time_delay = 0<b> - Time delay, Release Mode when time_delay = 0 <br>
+    <b>unsigned long time_delay = 0</b> - Time delay, Release Mode when time_delay = 0 <br>
   </p>
   <h5>pinModes are set manually </h5>
   <p>
-    void setup(){<br>
-    <ensp> pinMode(2, INPUT);<br>
-    }
+    <b>void setup(){<br>
+    &nbsp;pinMode(2, INPUT);<br>
+    }</b>
   </p>
 </div>
