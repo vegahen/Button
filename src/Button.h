@@ -15,12 +15,12 @@ class Button{
   bool been_released;
   bool released_now;
   
-public:
+public:|
   Button(byte pin, bool pressed_when, unsigned long time_delay = 0);
   void refresh();
-  const bool pressed();
-  const bool released();
-  const bool in();
+  const bool pressed(bool reset = true);
+  const bool released(bool reset = true);
+  const bool in(bool reset = true);
 };
 
 #endif

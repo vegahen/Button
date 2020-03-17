@@ -41,12 +41,15 @@ void Button::refresh(){
   was_in = is_in;
 }
 
-const bool Button::pressed(){
+const bool Button::pressed(bool reset = true){
+  if (reset){ refresh(); }
   return pressed_now;
 }
-const bool Button::released(){
+const bool Button::released(bool reset = true){
+  if (reset){ refresh(); }
   return released_now;
 }
-const bool Button::in(){
+const bool Button::in(bool reset = true){
+  if (reset){ refresh(); }
   return was_in;
 }

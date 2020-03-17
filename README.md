@@ -1,4 +1,7 @@
 <h1>Button Library for Arduino</h1>
+
+<h5>*** THIS IS OUTDATED ***<h5>
+
 <div>
   <h2>Declare button</h2>
   <p>
