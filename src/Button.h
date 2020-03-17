@@ -15,7 +15,7 @@ class Button{
   bool been_released;
   bool released_now;
   
-public:|
+public:
   Button(byte pin, bool pressed_when, unsigned long time_delay = 0);
   void refresh();
   const bool pressed(bool reset = true);

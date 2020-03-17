@@ -1,7 +1,5 @@
 <h1>Button Library for Arduino</h1>
 
-<h5>*** THIS IS OUTDATED ***<h5>
-
 <div>
   <h2>Declare button</h2>
   <p>
@@ -19,10 +17,11 @@
     &emsp;pinMode(2, INPUT);<br>
     }</b>
   </p>
-  <h2>Button is refreshed in loop</h2>
+  <h2>Button is refreshed automatically with each call unless false is supplied</h2>
   <p>
     <b>void loop( ) {<br>
-    &emsp;B.refresh( );<br>
+    &emsp;bool p = B.pressed();<br>
+    &emsp;bool r = B.released(false);<br>
     }
   </p>
 </div>
